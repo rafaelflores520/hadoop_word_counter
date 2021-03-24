@@ -2,7 +2,7 @@
 
 /**
  *
- * @author KATHERINE
+ * @author FRANKLIN
  */
 public class Estructura implements Comparable{
 	public String word;
