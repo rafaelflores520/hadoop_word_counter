@@ -1,0 +1,33 @@
+direccion donde poner Comando para arrancar hdfs y yarn
+cd /opt/hadoop/etc/hadoop/
+Hdfs
+start-dfs.sh
+yarn
+start-yarn.sh
+-------------------------------------------------------------------------------
+Direccion export para compilar java
+export HADOOP_CLASSPATH=/usr/local/java/jdk1.8.0_281/lib/tools.jar
+
+Compilar
+hadoop com.sun.tools.javac.Main proyect.java
+
+crear jar
+jar -cvf orden2.jar Ordenar2.class Estructura.class
+
+correr jar
+java -cp ./orden2.jar Ordenar2 Estructura
+-------------------------------------------------------------------------------
+Correr el wordCount
+1. mr-jobhistory-daemon.sh start historyserver
+2. hadoop jar ContarPalabras.jar ContarPalabras /temporal/accesslog /salidalog
+
+Scarlo para ver el resultado
+hdfs dfs -get /salidalog1/part-r-00000 /tmp/salida2.txt
+-------------------------------------------------------------------------------
+Direccion donde funciona hdfs cd /opt/hadoop/bin/
+-------------------------------------------------------------------------------
+como montar un archivo en cluster
+1. cd /home/franklin/Descargas
+2. mv /access_log /tmp
+3. hdfs dfs -put /tmp/access_log  /temporal/access_log
+
